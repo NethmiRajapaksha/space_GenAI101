@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Space Facts</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            padding: 30px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #f0f0f0;
+        }
+
+        #fact-display {
+            background: #333;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            min-height: 50px; /* Ensures space for the fact display */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease;
+        }
+
+        #fact-display:hover {
+            background: #444;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #6200ea;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #3700b3;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Space Fact</h1>
+        <p id="fact-display">Click the button to get a random space fact!</p>
+        <button id="fact-button">Get Random Fact</button>
+    </div>
+    <script>
+        const spaceFacts = [
+            { fact: "Space is completely silent because there is no atmosphere to carry sound." },
+            { fact: "The universe is approximately 13.8 billion years old." },
+            { fact: "There are more stars in the universe than grains of sand on all the Earth's beaches." },
+            { fact: "Neutron stars are so dense that a sugar-cube-sized amount of material from one would weigh about as much as all of humanity." },
+            { fact: "A day on Venus is longer than a year on Venus due to its slow rotation on its axis." },
+            { fact: "The footprints on the Moon will remain there for millions of years because there is no wind to erode them." },
+            { fact: "One million Earths could fit inside the Sun." },
+            { fact: "Black holes are regions in space where the gravitational pull is so strong that nothing, not even light, can escape from them." },
+            { fact: "The observable universe is about 93 billion light-years in diameter." },
+            { fact: "There is a giant cloud of alcohol in space, enough to make 400 trillion trillion pints of beer." }
+        ];
+
+        const factDisplay = document.getElementById('fact-display');
+        const factButton = document.getElementById('fact-button');
+
+        factButton.addEventListener('click', () => {
+            const randomIndex = Math.floor(Math.random() * spaceFacts.length);
+            factDisplay.textContent = spaceFacts[randomIndex].fact;
+        });
+    </script>
+</body>
+</html>
